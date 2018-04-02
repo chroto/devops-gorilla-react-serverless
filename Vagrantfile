@@ -8,6 +8,8 @@ Vagrant.configure("2") do |config|
   # your local network.
   config.vm.network "public_network", type: "dhcp"
 
+  config.vm.synced_folder ".", "/home/vagrant/workspace", type: "virtualbox"
+
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
     vb.gui = false
@@ -32,12 +34,13 @@ Vagrant.configure("2") do |config|
     
     # Terraform
     git clone https://github.com/kamatama41/tfenv.git /home/vagrant/.tfenv
-    echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> ~/.bashrc
+    ln -s ~/.tfenv/bin/* /usr/local/bin
 
     # Node.js
     curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
     yum install -y nodejs
 
     npm install -g npm
+    npm install -g create-react-app
   SHELL
 end
