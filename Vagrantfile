@@ -9,6 +9,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "public_network", type: "dhcp"
 
   config.vm.synced_folder ".", "/home/vagrant/workspace", type: "virtualbox"
+  config.vm.synced_folder "~/.aws", "/home/vagrant/.aws", type: "virtualbox"
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
