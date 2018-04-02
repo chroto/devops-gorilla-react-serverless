@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
     
     # Terraform
     git clone https://github.com/kamatama41/tfenv.git /home/vagrant/.tfenv
-    ln -s ~/.tfenv/bin/* /usr/local/bin
+    ln -s ~/.tfenv/bin/* /usr/local/bin/
 
     # Node.js
     curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
