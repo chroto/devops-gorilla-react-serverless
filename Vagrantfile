@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :reload
 
   config.vm.provision "shell", inline: <<-SHELL
-    yum install -y gcc kernel-devel kernel-headers dkms make bzip2 perl curl wget git unzip gcc-c++
+    yum install -y gcc kernel-devel kernel-headers dkms make bzip2 perl curl wget git unzip gcc-c++ awscli
     
     # Terraform
     git clone https://github.com/kamatama41/tfenv.git /home/vagrant/.tfenv
